@@ -12,6 +12,7 @@ require 'rbconfig'
 gem 'wdm', '>= 0.1.0' if RbConfig::CONFIG['target_os'] =~ /mswin|mingw|cygwin/i
 
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
+gem 'devise', '~>3.5.1'
 
 group :development, :test do
 gem 'sqlite3'
