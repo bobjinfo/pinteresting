@@ -69,7 +69,7 @@ Rails.application.configure do
 
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
-
+  
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
@@ -77,5 +77,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #Required for Heroku
-   config.action_mailer.default_url_options = { host: 'localhost', port: 3000' }
+   #config.action_mailer.default_url_options = { :host => "localhost", :port => "3000" }
+   Rails.application.routes.default_url_options[:host] = 'localhost:3000'
+
 end
