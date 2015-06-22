@@ -5,23 +5,22 @@ class PinsController < ApplicationController
 
   def index
     @pins = Pin.all
-    respond_with(@pins)
-  end
+      end
 
   def show
-    respond_with(@pin)
-  end
+    @pin = Pin.find params[:id]
+      end
 
   def new
-    @pin = Pin.new
-    respond_with(@pin)
-  end
+    @pin = current_user.pins.build
+      end
 
   def edit
   end
 
   def create
     @pin = Pin.new(pin_params)
+    @pin.user_id = current_user.id
     if @pin.save
       redirect_to @pin, notice: 'Pin was successfully created'
     else
