@@ -10,21 +10,20 @@ class PinsController < ApplicationController
       end
 
   def show
-    #@pin = Pin.find params[:id]
-      end
+    end
 
   def new
-    @pin = Pin.new
-   # @pin = current_user.pins.build
+     @pin = current_user.pins.build
       end
 
   def edit
-   # @user = User.find(params[:id])
+    #@user = User.find(params[:id])
   end
 
   def create
+    
     @pin = current_user.pins.build(pin_params)
-        if @pin.save
+         if @pin.save
       redirect_to @pin, notice: 'Pin was successfully created'
     else
      render action: 'new'
@@ -50,7 +49,7 @@ end
     end
     def correct_user
      # @pin = current_user.pins.find(params[:id])
-      @pin = current_user.pins.find_by(id: params[:id])
+      @pin = current_user.pins.find(params[:id])
       redirect_to pins_path, notice: "Not authorized to edit this pin" if @pin.nil?
     end
     def pin_params

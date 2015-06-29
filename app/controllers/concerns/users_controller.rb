@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
+    #@user = User.find(params[:id])
     if @user.update_attributes(users_params)
       flash[:notice] = 'Your data is updated succesfully'
       flash[:color] = 'valid'
