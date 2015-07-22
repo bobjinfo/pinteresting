@@ -6,6 +6,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem "tzinfo-data", platforms: [:mingw, :mswin]
 require 'rbconfig'
@@ -15,6 +16,8 @@ gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 gem 'devise', '~>3.5.1'
 gem 'rb-readline'
 gem 'paperclip', github: 'thoughtbot/paperclip'
+gem 'aws-sdk', '~>1.16.1'
+gem 'masonry-rails', '~>0.2.0'
 
 group :development, :test do
 gem 'sqlite3'
