@@ -7,14 +7,14 @@ class PinsController < ApplicationController
   def index
     @pins = Pin.all
     #@user = current_user.id
-      end
+  end
 
   def show
-    end
+  end
 
   def new
      @pin = current_user.pins.build
-      end
+  end
 
   def edit
     #@user = User.find(params[:id])
@@ -23,25 +23,25 @@ class PinsController < ApplicationController
   def create
     
     @pin = current_user.pins.build(pin_params)
-         if @pin.save
+    if @pin.save
       redirect_to @pin, notice: 'Pin was successfully created'
     else
      render action: 'new'
+    end
   end
-end
   def update
-   if @pin.update(pin_params)
-    redirect_to @pin, notice: 'Pin was successfully updated'
-  else
-    render action: 'edit'
-  end
+     if @pin.update(pin_params)
+       redirect_to @pin, notice: 'Pin was successfully updated'
+     else
+       render action: 'edit'
+     end
   end
 
   def destroy
     @pin.destroy
      redirect_to_pins_url
   
-    end
+  end
 
   private
     def set_pin
@@ -55,4 +55,5 @@ end
     def pin_params
       params.require(:pin).permit(:description, :image)
     end
-  end
+end
+  
